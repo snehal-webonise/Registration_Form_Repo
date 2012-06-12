@@ -6,8 +6,8 @@ function cleart()
     document.getElementById('address').value="";
     document.getElementById('contact').value="";
     document.getElementById('email').value="";
-    frm.sex[0].checked=false;
-    frm.sex[1].checked=false;
+    frm.sex[0].checked==false;
+    frm.sex[1].checked==false;
 }
 function nonEmpty1()
 {

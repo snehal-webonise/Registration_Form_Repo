@@ -7,10 +7,10 @@
 <form name="frm" action = "" method = "post" />
 <table  border='0' align="center">
 <tr><td>First Name:</td> <td><input type = "text" name = "firstname" id="firstname" style="width:230px; height:35px;"/></td></tr>
-<tr><td>Last Name:</td> <td><input type = "text" name = "lastname" id="lastname" style="width:230px; height:35px;"/></td></tr>
+<tr><td>Last Name:</td> <td><input type = "text" name = "lastname" id="lastname" /></td></tr>
 <tr><td>Address:</td><td> <textarea name = "address" id="address" rows="4" cols="30"></textarea></td></tr>
-<tr><td>Contact no.:</td><td> <input type = "text" name = "contact" id="contact" style="width:230px; height:35px;"/></td></tr>
-<tr><td>Email ID:</td><td> <input type = "text" name = "email" id="email" style="width:230px; height:35px;"/></td></tr>
+<tr><td>Contact no.:</td><td> <input type = "text" name = "contact" id="contact" /></td></tr>
+<tr><td>Email ID:</td><td> <input type = "text" name = "email" id="email" /></td></tr>
 <tr><td>Gender </td><td>Male :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sex" value="male" id="male"/></td></tr>
 <tr><td> </td><td>Female :&nbsp;&nbsp;<input type="radio" name="sex" value="female" id="female"/></td></tr>
 </table><br>
