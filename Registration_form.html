@@ -1,22 +1,29 @@
 <html>
-<body bgcolor="lightgray">
+<head>
 <script type="text/javascript" language="javascript" src="validation.js">
 </script>
+<script type="text/javascript" language="javascript" src="jquery-1.7.2.min.js">
+</script>
+</head>
+<body bgcolor="#BFEFFF">
+<div style="padding:10px;width:400px;height:60px;margin:0 auto;">
 <center><b><font size="6" color="blue">Registration Form </font></center><br>
+</div>
 <div id="myDiv" name="myDiv" title="Example Div Element" align="center" style="background-color:lightblue;border:2px solid black;width:400px;height:500px;padding: 40px;margin:0 auto;">
-<form name="frm" action = "" method = "post" />
+<form name="frm" />
 <table  border='0' align="center">
-<tr><td>First Name:</td> <td><input type = "text" name = "firstname" id="firstname" style="width:230px; height:35px;"/></td></tr>
-<tr><td>Last Name:</td> <td><input type = "text" name = "lastname" id="lastname" style="width:230px; height:35px;"/></td></tr>
-<tr><td>Address:</td><td> <textarea name = "address" id="address" rows="4" cols="30"></textarea></td></tr>
-<tr><td>Contact no.:</td><td> <input type = "text" name = "contact" id="contact" style="width:230px; height:35px;"/></td></tr>
+<tr><td>Name:</td> <td><input type = "text" name = "firstname" id="firstname" style="width:230px; height:35px;"/></td></tr>
 <tr><td>Email ID:</td><td> <input type = "text" name = "email" id="email" style="width:230px; height:35px;"/></td></tr>
+<tr><td>Age:</td> <td><input type = "text" name = "age" id="age" style="width:230px; height:35px;"/></td></tr>
 <tr><td>Gender </td><td>Male :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sex" value="male" id="male"/></td></tr>
 <tr><td> </td><td>Female :&nbsp;&nbsp;<input type="radio" name="sex" value="female" id="female"/></td></tr>
+<tr><td>Address:</td><td> <textarea name = "address" id="address" rows="4" cols="30"></textarea></td></tr>
+<tr><td>Description:</td><td> <textarea name = "descr" id="descr" rows="4" cols="30"></textarea></td></tr>
+<tr><td>Pincode:</td> <td><input type = "text" name = "pincode" id="pincode" style="width:230px; height:35px;"/></td></tr>
 </table><br>
 <table align="center">
 <tr>
-<td><input type = "submit" name = "ok" value ="Submit" onClick="return nonEmpty1();"/></td>
+<td><input type = "submit" name = "ok" value ="Submit"  onClick="return nonEmpty1();"/></td>
 <td><input type = "button" name = "reset" value ="Reset" onClick="cleart();"/></td>
 </tr>
 </table>

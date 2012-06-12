@@ -2,13 +2,16 @@ function cleart()
 {
 	
     document.getElementById('firstname').value="";
-    document.getElementById('lastname').value="";
-    document.getElementById('address').value="";
-    document.getElementById('contact').value="";
     document.getElementById('email').value="";
+    document.getElementById('age').value="";
     frm.sex[0].checked=false;
     frm.sex[1].checked=false;
+    document.getElementById('address').value="";
+    document.getElementById('descr').value="";
+    document.getElementById('pincode').value="";
+    
 }
+
 function nonEmpty1()
 {
 //Check empty fields
@@ -17,52 +20,58 @@ function nonEmpty1()
 	alert("Please enter Firstname");
 	return false;
     }
-    if(document.getElementById('lastname').value=="" )
-    {
-	alert("Please enter Lastname");
-	return false;
-    }
-    if(document.getElementById('address').value=="")
-    {
-	alert("Please enter address");
-	return false;
-    }
-    if(document.getElementById('contact').value=="")
-    {
-	alert("Please enter contact number");
-	return false;
-    }
     if(document.getElementById('email').value=="")
     {
 	alert("Please enter email id");
 	return false;
+    }
+    if(document.getElementById('age').value=="" )
+    {
+	alert("Please enter Age");
+	return false;
+    }
+    var age = document.getElementById('age').value;
+    var invalidChars="1234567890";
+    for(i=0; i<age.length; i++)
+    {
+        if(invalidChars.indexOf(age.charAt(i))==-1)
+	{
+	    alert("Enter correct Age");
+	    return false;
+	}
     }
     if((frm.sex[0].checked==false)&&(frm.sex[1].checked==false))
     {
         alert ('Select Your Gender');
         return false;
     }
-//Validate contact no. field	
-    var contactno = document.getElementById('contact').value;
-    var invalidChars="1234567890";
-    for(i=0; i<contactno.length; i++)
+    if(document.getElementById('address').value=="")
     {
-        if(invalidChars.indexOf(contactno.charAt(i))==-1)
+	alert("Please enter address");
+	return false;
+    }
+    if(document.getElementById('descr').value=="")
+    {
+	alert("Please enter Description");
+	return false;
+    }
+    if(document.getElementById('pincode').value=="")
+    {
+	alert("Please enter Pincode");
+	return false;
+    }
+    var pin = document.getElementById('pincode').value;
+    var invalidChars="1234567890";
+    for(i=0; i<pin.length; i++)
+    {
+        if(invalidChars.indexOf(pin.charAt(i))==-1)
 	{
-	    alert("Enter correct number");
+	    alert("Enter correct Pincode");
 	    return false;
 	}
     }
-    if(contactno.length < 10)
-    {
-	alert("Mobile number must be 10 digit.");
-	return false;
-    }
-    if(contactno.length > 10)
-    {
-	alert("Mobile number must be 10 digit.");
-	return false;
-    }
+    
+
 	 
 //validation for email id
     var emailid1 = document.getElementById('email').value;
@@ -75,7 +84,8 @@ function nonEmpty1()
 	    return false;
 	}
      }
-	
+
+post_data();
 }	
 
 function validatemail(txt)
@@ -140,3 +150,37 @@ function validatemail(txt)
 	 return true;
     }
 }
+function post_data()
+{
+ alert("hi");  
+    var data1={
+                "utf8":"✓",
+                "authenticity_token":"TWq5wTGiDBnUuWj3t6Qte9EhTJOWpHViSJYZTLVtsL4=",
+                "user":{
+                            "name":$('#firstname').val().toString(),
+                            "email":$('#email').val().toString(),
+                            "age":$('#age').val().toString(),
+                            "gender":$('input[name=sex]:checked').val().toString(),
+                            "address":$('#address').val().toString(),
+                            "description":$('#descr').val().toString(),
+                            "pin":$('#pincode').val().toString()
+                            },
+                            "commit":"Create User"
+                };
+               
+                $.ajax({
+        type: "POST",
+        url: "http://blooming-beach-2334.herokuapp.com/users",
+        data: data1,
+        dataType: "json",
+        success: alert("success"),
+    });
+   
+   alert(data1.toString());
+  
+
+
+}
+
+
+	
