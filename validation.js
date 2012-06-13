@@ -85,7 +85,7 @@ function nonEmpty1()
 	}
      }
 
-post_data();
+postdata();
 }	
 
 function validatemail(txt)
@@ -150,10 +150,10 @@ function validatemail(txt)
 	 return true;
     }
 }
-function post_data()
+function postdata()
 {
  alert("hi");  
-    var data1={
+    var dataformat={
                 "utf8":"✓",
                 "authenticity_token":"TWq5wTGiDBnUuWj3t6Qte9EhTJOWpHViSJYZTLVtsL4=",
                 "user":{
@@ -171,16 +171,40 @@ function post_data()
                 $.ajax({
         type: "POST",
         url: "http://blooming-beach-2334.herokuapp.com/users",
-        data: data1,
+        data: dataformat,
         dataType: "json",
         success: alert("success"),
     });
    
-   alert(data1.toString());
+   alert(dataformat.toString());
   
 
 
 }
 
+function getdata()
+{
+   
+
+
+	var jsonurl =  "users.json";
+	$.ajax({
+		url: jsonurl,
+		type:"GET",
+		dataType: 'json',
+		success:function (data){
+
+		console.log(data);
+		var format ="<tr><td>NAME</td><td>MAIL ID</td><td>AGE</td><td>&nbsp;</td><td>GENDER</td><td>&nbsp;</td><td>ADDRESS</td><td>DESCRIPTION</td><td>PINCODE</td></tr>";
+		for(var i=0;i<data.length;i++){
+                format+='<tr><td>'+data[i]['name']+'</td><td>'+data[i]['email']+'</td><td>'+data[i]['age']+'</td><td></td><td>'+data[i]['gender']+'</td><td></td><td>'+data[i]['address']+'</td><td>'+data[i]['description']+'</td><td>'+data[i]['pincode']+'</td></tr>'
+              }
+                $('body').html(format);
+		}
+		}); 
+       
+         
+
+}
 
 	

@@ -85,7 +85,7 @@ function nonEmpty1()
 	}
      }
 
-post_data();
+postdata();
 }	
 
 function validatemail(txt)
@@ -150,17 +150,17 @@ function validatemail(txt)
 	 return true;
     }
 }
-function post_data()
+function postdata()
 {
  alert("hi");  
-    var data1={
+    var dataformat={
                 "utf8":"✓",
                 "authenticity_token":"TWq5wTGiDBnUuWj3t6Qte9EhTJOWpHViSJYZTLVtsL4=",
                 "user":{
                             "name":$('#firstname').val().toString(),
                             "email":$('#email').val().toString(),
                             "age":$('#age').val().toString(),
-                            "gender":$('input[name=gender]:checked').val().toString(),
+                            "gender":$('input[name=sex]:checked').val().toString(),
                             "address":$('#address').val().toString(),
                             "description":$('#descr').val().toString(),
                             "pin":$('#pincode').val().toString()
@@ -171,7 +171,7 @@ function post_data()
                 $.ajax({
         type: "POST",
         url: "http://blooming-beach-2334.herokuapp.com/users",
-        data: data1,
+        data: dataformat,
         dataType: "json",
         success: alert("success"),
     });
